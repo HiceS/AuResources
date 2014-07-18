@@ -18,13 +18,9 @@
         $query = "
             SELECT
                 id,
-				name,
                 username,
                 password,
-				salt,
-				subteam,
-				calicas,
-				years
+				salt
             FROM login
             WHERE
                 username = :username
@@ -93,8 +89,8 @@
             $_SESSION['user'] = $row;
             
             // Redirect the user to the private members-only page.
-            header("Location: /chairhierarchy.php");
-            die("Redirecting to: /chairhierarchy.php");
+            header("Location: /index.php");
+            die("Redirecting to: /index.php");
         }
         else
         {
@@ -111,8 +107,8 @@
     }
 	}
 	else {
-		header("Location: /chairhierarchy.php");
-		die("Redirecting to: /chairhierarchy.php");
+		header("Location: /index.php");
+		die("Redirecting to: /index.php");
 	}
     
 ?>
