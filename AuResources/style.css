@@ -1,0 +1,14 @@
+/*********************************************************************************/
+/* Wrappers                                                                      */
+/*********************************************************************************/
+
+	.wrapper
+	{
+		position: relative;
+	}
+	
+	#header-wrapper
+	{
+		background: url('../images/banner.jpg') center center;
+		background-size: cover;
+	}
