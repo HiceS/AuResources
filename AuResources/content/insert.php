@@ -72,10 +72,12 @@ require("common.php");
         $query = "
             INSERT INTO login (
                 username,
+				name,
                 password,
                 salt
             ) VALUES (
                 :username,
+				:name,
                 :password,
                 :salt
 				
@@ -115,6 +117,7 @@ require("common.php");
 			// the salt (in its plaintext form; this is not a security risk).
 			$query_params = array(
 				':username' => $_POST['username'],
+				':name' => $_POST['name'],
 				':password' => $password,
 				':salt' => $salt
 			);

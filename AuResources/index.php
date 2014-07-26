@@ -106,6 +106,8 @@
 					include("content/register.php");
 				} elseif ($pagename == "insert") {
 					include("content/insert.php");
+				} elseif ($pagename == "messaging") {
+					include("content/messaging.php");
 				}
 			?>	
         </div>
