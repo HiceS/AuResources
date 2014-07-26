@@ -19,6 +19,7 @@
             SELECT
                 id,
                 username,
+				name,
                 password,
 				salt
             FROM login

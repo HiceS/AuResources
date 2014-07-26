@@ -2,7 +2,7 @@
 
     // These variables define the connection information for your MySQL database
     $username = "root";
-    $password = "toor";
+    $password = "cam99els";
     $host = "localhost";
     $dbname = "au_resources";
 

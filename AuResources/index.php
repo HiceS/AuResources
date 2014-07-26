@@ -77,10 +77,10 @@
               <li> <span>User Options</span>
                 <ul style="background-color: #7C7C7C">
                   <li><a href="index.php?page=edit">Edit account info</a></li>
-                  <li><a href="logout.php">Logout</a></li>
+                  <li><a href="index.php?page=logout">Logout</a></li>
                 </ul>
               </li>
-              <li><a href="index.php?page=messaging">Messaging center</a></li>
+              <li><a href="index.php?page=message_center">Messaging center</a></li>
               <li><a href="index.php?page=merchandise">Merchandise</a></li>
               <li><a href="index.php?page=pbank">Private Bank</a></li>
 			  <li><a href="index.php?page=landclaims">Land and Claims</a></li>
@@ -108,6 +108,12 @@
 					include("content/insert.php");
 				} elseif ($pagename == "messaging") {
 					include("content/messaging.php");
+				} elseif ($pagename == "mes_insert") {
+					include("content/mes_insert.php");
+				} elseif ($pagename == "logout") {
+					include("content/logout.php");
+				} elseif ($pagename == "message_center") {
+					include("content/message_center.php");
 				}
 			?>	
         </div>
