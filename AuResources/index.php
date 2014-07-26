@@ -9,74 +9,116 @@
 ?>
 <!DOCTYPE html>
 <html>
-
     <head>
-        <title>AuResources</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-		<meta charset="utf-8">
-		<link rel="icon" type="img/png" href="images/favicon.png" />
-		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,900" rel="stylesheet">	
-		<script src="5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none&amp;mobileUI.titleBarHeight=0"></script>
-		<noscript>
-		<link rel="stylesheet" href="css/5grid/core.css">
-		<link rel="stylesheet" href="css/5grid/core-desktop.css">
-		<link rel="stylesheet" href="css/5grid/core-1200px.css">
-		<link rel="stylesheet" href="css/5grid/core-noscript.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/style-desktop.css">
-		</noscript>
-		<div>
-			<div id="header">
-				<ul>
-				  <li class="current_page_item"><a href="index.php">Home</a></li>
-				  <li> <span>User Options</span>
-					<ul>
-					  <li><a href="index.php?page=edit">Edit account info</a></li>
-					  <li><a href="logout.php">Logout</a></li>
-					  <!--
-					  <li> <span>Sed consequat</span>
-						<ul>
-						  <li><a href="#">Lorem dolor</a></li>
-						  <li><a href="#">Amet consequat</a></li>
-						  <li><a href="#">Magna phasellus</a></li>
-						  <li><a href="#">Etiam nisl</a></li>
-						  <li><a href="#">Sed feugiat</a></li>
-						</ul>
-					  </li>
-					  -->
-					</ul>
-				  </li>
-				  <li><a href="chairs.php">Chair Bio</a></li>
-				  <li><a href="leaderboard.php">LeaderBoards</a></li>
-				  <li><a href="instructions.php">How to Move up</a></li>
-				</ul>
-			</div>
-		</div>
-    </head>
-    
-    <body>
-    
-        <header id="head" >
-			<p><a href="index.php?page=login" style="text-decoration:none"><span id="main">AuResources</span></a></p>
-			<p><a href="logout.php"><span id="logout">Logout</span></a></p>
-        </header>
-        
-        <div id="main-wrapper">
+<title>AuResources</title>
+<meta charset="utf-8">
+<link rel="icon" type="img/png" href="images/favicon.png" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,900" rel="stylesheet">
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="chair_css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none&amp;mobileUI.titleBarHeight=0"></script>
+<script src="js/jquery.dropotron-1.2.js"></script>
+<script src="js/init.js"></script>
+<noscript>
+<link rel="stylesheet" href="chair_css/5grid/core.css">
+<link rel="stylesheet" href="chair_css/5grid/core-desktop.css">
+<link rel="stylesheet" href="chair_css/5grid/core-1200px.css">
+<link rel="stylesheet" href="chair_css/5grid/core-noscript.css">
+<link rel="stylesheet" href="chair_css/style.css">
+<link rel="stylesheet" href="chair_css/style-desktop.css">
+</noscript>
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="css/ie8.css">
+<![endif]-->
+
+<div id="header-wrapper" class="wrapper">
+  <div class="5grid-layout">
+    <div class="row">
+      <div class="12u">
+        <div id="header">
+          <div id="logo">
+            <h1><a class="mobileUI-site-name"><font color="#FFD119">Au</font>Resources</a></h1>
+            <span class="byline">In gold we trust</span>
+		  </div>
+          <nav id="nav" class="mobileUI-site-nav">
+		  <div id="user">
+			<?php
 			
+			require("common.php");
+			
+			//if(empty($_SESSION['user'])){
+			?>
+				<p> 
+					<a href="index.php?page=login"><font color="#fff">Login</font></a>
+					<br>
+					or
+					<br>
+					<a href="index.php?page=register"><font color="#fff">Sign Up</font></a>
+				</p>
+				
+			
+			<?php // }  ?>
+			<?php
+			
+		//	else{
+			?>
+<!--			
+			<p>
+					Hello
+					<br>
+					<?php echo htmlentities($_SESSION['user']['name'], ENT_QUOTES, 'UTF-8'); ?>
+					<br>
+					<a href="logout.php" STYLE="text-decoration: none"><font color="#fff">Logout</font></a>
+				</p>
+				-->
+			<?php // } ?>
+		</div>
+            <ul>
+              <li class="current_page_item"><a href="index.php">Home</a></li>
+              <li> <span>User Options</span>
+                <ul style="background-color: #7C7C7C">
+                  <li><a href="index.php?page=edit">Edit account info</a></li>
+                  <li><a href="logout.php">Logout</a></li>
+                </ul>
+              </li>
+              <li><a href="index.php?page=messaging">Messaging center</a></li>
+              <li><a href="index.php?page=merchandise">Merchandise</a></li>
+              <li><a href="index.php?page=pbank">Private Bank</a></li>
+			  <li><a href="index.php?page=landclaims">Land and Claims</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</head>
+	<body>        
+		<div id="main-wrapper">
 			<?php 				
 				if ($pagename == "home") {
-					include("mainpage.php");
+					include("content/mainpage.php");
 				} elseif ($pagename == "login") {
-					include("login.php");
+					include("content/login.php");
 				} elseif ($pagename == "private") {
-					include("private.php");
+					include("content/private.php");
 				} elseif ($pagename == "register") {
-					include("register.php");
+					include("content/register.php");
 				} elseif ($pagename == "insert") {
-					include("insert.php");
+					include("content/insert.php");
 				}
-			?>
-			
+			?>	
         </div>
     </body>
+	<footer>
+		<div id="footer-wrapper" class="wrapper" style="height: 200px">
+			<div style="float: right">
+				<a>Certified by AuAlaska mining corporation</a>
+				<br>
+				<a>For more information you may email : email@email.com</a>
+				<br>
+				<a>If you see something wrong with the website please email: shawnhice@gmail.com</a>
+			</div>
+		</div>
+	</footer>
 </html> 
