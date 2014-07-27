@@ -1,6 +1,8 @@
 <?php
-
-				// First we execute our common code to connection to the database and start the session
+	
+				ini_set('error_reporting', E_ALL);
+				ini_set('display_errors', 1);
+				
 				require("common.php");
 				
 				// At the top of the page we check to see whether the user is logged in or not
@@ -18,7 +20,8 @@
 				
 				// We can display the user's username to them by reading it from the session array.  Remember that because
 				// a username is user submitted content we must use htmlentities on it before displaying it to the user.
-			?>
+		
+		?>
 <html>
 	<body>
 		<div>
@@ -30,15 +33,17 @@
 			<ul>
 				<?php
 				
+	//			$result = mysql_query("SELECT * FROM messaging");
+				
 				$query = "
-				SELECT COUNT(*) AS
-				 NumberOfMessages
-				FROM messaging
+					SELECT
+						*
+					FROM messaging
 				";
 				try{
 					// These two statements run the query against your database table.
 					$stmt = $db->prepare($query);
-					$result = $stmt->execute($query_params);
+					$result = $db->execute($query);
 				}
 				catch(PDOException $ex)
 				{
@@ -46,44 +51,26 @@
 					// It may provide an attacker with helpful information about your code. 
 					die("Failed to run query: " . $ex->getMessage());
 				}
+				$num_rows = mysql_num_rows($result);
 				
-				$num_rows = $result; 
-				$x = 1;
-				do{
+				echo($num_rows);
+				if (!$result) {
+					die('Invalid query: ' . mysql_error());
+				}
+				
+			//	$x = 1;
+			//	for($x = 1; $x <= $num_rows; $x++)
+			//	{
 				?>
 					<li>
-						<?php
 						
-						$query = "
-						SELECT 
-							title
-						FROM messaging
-						WHERE
-							$num_rows = id 
-						";
-						try
-						{
-							// Execute the query against the database
-							$stmt = $db->prepare($query);
-							$result = $stmt->execute($query_params);
-						}
-						catch(PDOException $ex)
-						{
-							// Note: On a production website, you should not output $ex->getMessage().
-							// It may provide an attacker with helpful information about your code. 
-							die("Failed to run query: " . $ex->getMessage());
-						}
-						$row = $stmt->fetch();
-						if($row){
-							print($result);
-						}
-			            ?>
 					</li>
 				<?php
-				} while ($num_rows >= $x);
+			//	}
 				?>
+				<li class="buttons">
+					<input name="New message" type="submit" onclick="location.href='index.php?page=messaging'"/>
 			</ul>
-			<input type="submit" href="index.php?page=messaging"/>
 		</div>
 	</body>
 </html>
