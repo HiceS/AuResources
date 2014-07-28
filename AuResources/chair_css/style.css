@@ -910,7 +910,7 @@
 		height: 850px;
 	}
 	#body-wrapper{
-		padding: 0em 4em 2em 4em;
+		padding: 0em 4em 1em 4em;
 		background: #7C7C7C url('images/overlay.png');
 	}
 	
@@ -918,7 +918,19 @@
 		background: #fff url('images/overlay.png');
 	}
 	
-	
+		#info_all-wrapper .hugetitle
+		{	
+			margin-top: 1em;
+			font-size: 50pt;
+			font-weight: 900;
+			font-color: black;
+			float: center;
+		}
+		
+		#info_all-wrapper .padded_info
+		{
+			padding: 20px;
+		}
 	#footer-wrapper
 	{
 		background: #7C7C7C url('images/overlay.png');
@@ -1120,6 +1132,7 @@
 		margin-left: 2em;
 		margin-top: 3em;
 	}
+	
 		#info_written .fancyparagraph
 		{
 			margin-top: 2em;
@@ -1136,6 +1149,16 @@
 		
 		#info_written .fancybody
 		{
+			margin-right: 5em;
+			margin-left: 1em;
+			margin-bottom: 3em;
+			background: #fff;
+		}
+		
+		#info_written .fancybody_right
+		{
+			margin-right: 5em;
+			margin-left: 20em;
 			margin-bottom: 3em;
 			background: #fff;
 		}
@@ -1145,6 +1168,42 @@
 			margin-top: 2em;
 		
 		}
+		
+		#info_written .fancyboxing
+		{
+			width: 200px;
+			height: 200px;
+		}
+		
+		#info-written .hugetitle
+		{
+			font-size: 100pt;
+			font-weight: 900;
+			font-color: black;
+		}
+		
+		#info-written .fancyimage
+		{
+			width: 300px;
+			height: 200px;
+		}
+		
+		#info-written .purchase
+		{
+			margin-top: 1em;
+			font-size: 200%;
+			color: #E68A00;
+			font-weight: 500;
+		}
+		
+	#purchase
+	{
+		float: right;
+		margin-top: 1em;
+		font-size: 200%;
+		color: #E68A00;
+		font-weight: 500;
+	}
 	
 /*********************************************************************************/
 /* Intro                                                                         */

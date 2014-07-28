@@ -3,6 +3,7 @@
 		<div id="body-wrapper" class="wrapper">
 			<form id="info_all-wrapper">
 			<img id="medium-wrapper" src="../images/medium1.jpg"/>
+			<div class="padded_info">
 				<div id="info_written">
 				<a class="fancyparagraph">
 					<span class="fancytitle">Gold:</span>
@@ -17,6 +18,7 @@
 					<p class="fancybody">Etiam ac nisi vestibulum, mollis tortor quis, dignissim nunc. Nam nisl massa, varius non tempor et, vulputate sit amet magna. Fusce a lacinia leo. Sed malesuada elit aliquam arcu volutpat, in viverra diam dictum. Duis facilisis urna sit amet nulla blandit commodo. Etiam eleifend, nisl in laoreet viverra, urna orci gravida quam, egestas malesuada diam lacus in mi. Vestibulum erat ante, hendrerit vel tortor sit amet, posuere eleifend sem. Donec vehicula leo sed sapien suscipit ultrices. Etiam ut libero id felis auctor porttitor vel et sapien. Donec ipsum arcu, tristique eget bibendum non, convallis nec velit. Mauris sed interdum felis. Sed consequat nulla a nisl semper, nec venenatis tellus iaculis. Pellentesque pellentesque eros vitae fermentum tristique. Integer interdum ligula a metus feugiat, at volutpat odio bibendum.</p>
 				</a>
 				<p class="endline"></p> 
+				</div>
 				</div>
 			</form>
 		</div>

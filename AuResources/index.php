@@ -36,7 +36,7 @@
       <div class="12u">
         <div id="header">
           <div id="logo">
-            <h1><a class="mobileUI-site-name"><font color="#FFD119">Au</font>Resources</a></h1>
+            <h1><a class="mobileUI-site-name"><font color="#FFD119">Au</font>Society</a></h1>
             <span class="byline">In gold we trust</span>
 		  </div>
           <nav id="nav" class="mobileUI-site-nav">
@@ -80,11 +80,17 @@
                   <li><a href="index.php?page=logout">Logout</a></li>
                 </ul>
               </li>
-              <li><a href="index.php?page=message_center">Messaging center</a></li>
+			  <li><a href="index.php?page=photo_center">Photo Center</a></li>
               <li><a href="index.php?page=merchandise">Merchandise</a></li>
-              <li><a href="index.php?page=pbank">Private Bank</a></li>
-			  <li><a href="index.php?page=landclaims">Land and Claims</a></li>
-            </ul>
+			  <li> <span>Member Services</span>
+				<ul style="background-color: #7C7C7C">
+					<li><a href="index.php?page=pbank">Private Bank</a></li>
+					<li><a href="index.php?page=landclaims">Land and Claims</a></li>
+					<li><a href="index.php?page=landclaims">Nome Gold Adventures</a></li>
+					<li><a href="index.php?page=photo_center">Message Center</a></li>
+				</ul>
+			  </li>
+			</ul>
           </nav>
         </div>
       </div>
@@ -114,6 +120,10 @@
 					include("content/logout.php");
 				} elseif ($pagename == "message_center") {
 					include("content/message_center.php");
+				} elseif ($pagename == "photo_center") {
+					include("content/photos.php");
+				} elseif ($pagename == "merchandise") {
+					include("content/merchandise.php");
 				}
 			?>	
         </div>
