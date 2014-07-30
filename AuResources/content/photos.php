@@ -196,30 +196,33 @@
 			margin: 0 auto;
 		}
 	</style>
-	<body>
+		<body>
 	<div id="body-wrapper" class="wrapper">
 	<form id="info_all-wrapper">
-	<h3>Simple image gallery</h3>
-	<a class="fancybox-media" href="http://www.youtube.com/watch?v=MaSH70Vc4e4">Youtube Video on gold mining</a>
-	<p>
-		<a class="fancybox" href="../images/medium1.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="../images/medium1.jpg" alt="" /></a>
+		<div class="padded_info">
+			<h1><span class = "hugetitle" style="text-align: center;"><font color="#FFD119">Au</font>Photo Gallery: </span></h1>
+				<div id="info_written">
+					<a class="fancybox-media" href="http://www.youtube.com/watch?v=MaSH70Vc4e4">Youtube Video on gold mining</a>
+					<p>
+						<a class="fancybox" href="../images/medium1.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="../images/medium1.jpg" alt="" /></a>
 
-		<a class="fancybox" href="images\photo_center\2.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="images\photo_center\2.jpg" alt="" /></a>
+						<a class="fancybox" href="images\photo_center\2.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="images\photo_center\2.jpg" alt="" /></a>
 
-		<a class="fancybox" href="images\photo_center\3.jpg" data-fancybox-group="gallery" title="Cras neque mi, semper leon"><img src="images\photo_center\3.jpg" alt="" /></a>
+						<a class="fancybox" href="images\photo_center\3.jpg" data-fancybox-group="gallery" title="Cras neque mi, semper leon"><img src="images\photo_center\3.jpg" alt="" /></a>
 
-		<a class="fancybox" href="images\photo_center\4.jpg" data-fancybox-group="gallery" title="Sed vel sapien vel sem uno"><img src="images\photo_center\4.jpg" alt="" /></a>
-	</p>
-	<p>
-		<a class="fancybox" href="images\photo_center\5.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="images\photo_center\5.jpg" alt="" /></a>
+						<a class="fancybox" href="images\photo_center\4.jpg" data-fancybox-group="gallery" title="Sed vel sapien vel sem uno"><img src="images\photo_center\4.jpg" alt="" /></a>
+					</p>
+					<p>
+						<a class="fancybox" href="images\photo_center\5.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="images\photo_center\5.jpg" alt="" /></a>
 
-		<a class="fancybox" href="images\photo_center\6.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="images\photo_center\6.jpg" alt="" /></a>
+						<a class="fancybox" href="images\photo_center\6.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="images\photo_center\6.jpg" alt="" /></a>
 
-		<a class="fancybox" href="images\photo_center\7.jpg" data-fancybox-group="gallery" title="Cras neque mi, semper leon"><img src="images\photo_center\7.jpg" alt="" /></a>
+						<a class="fancybox" href="images\photo_center\7.jpg" data-fancybox-group="gallery" title="Cras neque mi, semper leon"><img src="images\photo_center\7.jpg" alt="" /></a>
 
-		<a class="fancybox" href="images\photo_center\8.jpg" data-fancybox-group="gallery" title="Sed vel sapien vel sem uno"><img src="images\photo_center\8.jpg" alt="" /></a>
-	</p>
-	</form>
-	</div>
+						<a class="fancybox" href="images\photo_center\8.jpg" data-fancybox-group="gallery" title="Sed vel sapien vel sem uno"><img src="images\photo_center\8.jpg" alt="" /></a>
+					</p>
+				</div>
+				</div>
+			</form>
 	</body>
 </html>

@@ -40,7 +40,7 @@
 						<a name="name" for="name"><?php echo htmlentities($_SESSION['user']['name'], ENT_QUOTES, 'UTF-8'); ?></a>
 					</li>
 					<li class="buttons">
-						<input type="submit" href="index.php?page=mes_insert" name="message" value="Finished" />
+						<input type="submit" href="index.php?page=mes_insert" value="Finished" />
 					</li>
 				</ul>
 			</form>

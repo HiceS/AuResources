@@ -23,54 +23,62 @@
 		
 		?>
 <html>
-	<body>
-		<div>
+	<div id="body-wrapper" class="wrapper">
+	<form id="info_all-wrapper">
+		<div class="padded_info">
+		<h1><span class = "hugetitle" style="text-align: center;"><font color="#FFD119">Au</font>Messaging: </span></h1>
+				<div id="info_written">
 			<a>Hello:
-			<br>
-			<?php echo htmlentities($_SESSION['user']['name'], ENT_QUOTES, 'UTF-8'); ?>
-			<br>
+				<br>
+					<?php echo htmlentities($_SESSION['user']['name'], ENT_QUOTES, 'UTF-8'); ?>
+				<br>
 			</a>
-			<ul>
-				<?php
-				
-	//			$result = mysql_query("SELECT * FROM messaging");
-				
-				$query = "
-					SELECT
-						*
-					FROM messaging
-				";
-				try{
-					// These two statements run the query against your database table.
-					$stmt = $db->prepare($query);
-					$result = $db->execute($query);
-				}
-				catch(PDOException $ex)
-				{
-					// Note: On a production website, you should not output $ex->getMessage().
-					// It may provide an attacker with helpful information about your code. 
-					die("Failed to run query: " . $ex->getMessage());
-				}
-				$num_rows = mysql_num_rows($result);
-				
-				echo($num_rows);
-				if (!$result) {
-					die('Invalid query: ' . mysql_error());
-				}
-				
-			//	$x = 1;
-			//	for($x = 1; $x <= $num_rows; $x++)
-			//	{
-				?>
-					<li>
+					<ul>
+						<?php
 						
-					</li>
-				<?php
-			//	}
-				?>
-				<li class="buttons">
-					<input name="New message" type="submit" onclick="location.href='index.php?page=messaging'"/>
-			</ul>
+			//			$result = mysql_query("SELECT * FROM messaging");
+						
+						$query = "
+							SELECT
+								*
+							FROM messaging
+						";
+						try{
+							// These two statements run the query against your database table.
+							$stmt = $db->prepare($query);
+							$result = $stmt->execute();
+						}
+						catch(PDOException $ex)
+						{
+							// Note: On a production website, you should not output $ex->getMessage().
+							// It may provide an attacker with helpful information about your code. 
+							die("Failed to run query: " . $ex->getMessage());
+						}
+						
+						if (!$result) {
+							die('Invalid query: ' . mysql_error());
+						} else {
+							$num_rows = $result;
+							echo($num_rows);
+						}
+						
+						
+						$x = 1;
+					//	for($x = 1; $x <= $num_rows; $x++)
+					//	do{
+						?>
+							<li>
+								<?php // $x++; ?>
+								hello there
+							</li>
+						<?php
+					//	} while($num_rows >= $x);
+						?>
+						<li class="buttons">
+							<input name="New message" type="button" value="New Message" onclick="location.href='index.php?page=messaging'"/>
+					</ul>
+			</div>
 		</div>
+		</form>
 	</body>
 </html>

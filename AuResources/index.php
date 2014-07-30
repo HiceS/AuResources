@@ -5,7 +5,6 @@
 	if ($pagename == "") {
 		$pagename = "home";
 	}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,7 +44,7 @@
 			
 			require("common.php");
 			
-			//if(empty($_SESSION['user'])){
+			if(empty($_SESSION['user'])){
 			?>
 				<p> 
 					<a href="index.php?page=login"><font color="#fff">Login</font></a>
@@ -56,27 +55,25 @@
 				</p>
 				
 			
-			<?php // }  ?>
+			<?php  }  ?>
 			<?php
 			
-		//	else{
-			?>
-<!--			
-			<p>
+			if(!empty($_SESSION['user'])){
+			?>		
+				<p>
 					Hello
 					<br>
 					<?php echo htmlentities($_SESSION['user']['name'], ENT_QUOTES, 'UTF-8'); ?>
 					<br>
-					<a href="logout.php" STYLE="text-decoration: none"><font color="#fff">Logout</font></a>
+					<a href="index.php?page=logout"><font color="#fff">Logout</font></a>
 				</p>
-				-->
-			<?php // } ?>
+			<?php  } ?>
 		</div>
             <ul>
               <li class="current_page_item"><a href="index.php">Home</a></li>
               <li> <span>User Options</span>
                 <ul style="background-color: #7C7C7C">
-                  <li><a href="index.php?page=edit">Edit account info</a></li>
+                  <li><a href="index.php?page=edit_account">Edit account info</a></li>
                   <li><a href="index.php?page=logout">Logout</a></li>
                 </ul>
               </li>
@@ -86,8 +83,8 @@
 				<ul style="background-color: #7C7C7C">
 					<li><a href="index.php?page=pbank">Private Bank</a></li>
 					<li><a href="index.php?page=landclaims">Land and Claims</a></li>
-					<li><a href="index.php?page=landclaims">Nome Gold Adventures</a></li>
-					<li><a href="index.php?page=photo_center">Message Center</a></li>
+					<li><a href="http://nomegoldadventures.com/">Nome Gold Adventures</a></li>
+					<li><a href="index.php?page=message_center">Message Center</a></li>
 				</ul>
 			  </li>
 			</ul>
@@ -124,6 +121,12 @@
 					include("content/photos.php");
 				} elseif ($pagename == "merchandise") {
 					include("content/merchandise.php");
+				} elseif ($pagename == "edit_account") {
+					include("content/edit_account.php");
+				} elseif ($pagename == "pbank") {
+					include("content/pbank.php");
+				} elseif ($pagename == "landclaims") {
+					include("content/landclaims.php");
 				}
 			?>	
         </div>

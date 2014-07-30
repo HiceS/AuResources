@@ -73,13 +73,17 @@ require("common.php");
             INSERT INTO login (
                 username,
 				name,
+				email,
                 password,
-                salt
+                salt,
+				sint
             ) VALUES (
                 :username,
 				:name,
+				:email,
                 :password,
-                :salt
+                :salt,
+				:sint
 				
             )
         ";
@@ -118,8 +122,10 @@ require("common.php");
 			$query_params = array(
 				':username' => $_POST['username'],
 				':name' => $_POST['name'],
+				':email' => $_POST['email'],
 				':password' => $password,
-				':salt' => $salt
+				':salt' => $salt,
+				':sint' => $_POST['sint']
 			);
 			
 			try
