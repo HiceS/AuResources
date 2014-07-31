@@ -1,7 +1,7 @@
 <?php
 	
-				ini_set('error_reporting', E_ALL);
-				ini_set('display_errors', 1);
+			//	ini_set('error_reporting', E_ALL);
+			//	ini_set('display_errors', 1);
 				
 				require("common.php");
 				
@@ -36,8 +36,6 @@
 					<ul>
 						<?php
 						
-			//			$result = mysql_query("SELECT * FROM messaging");
-						
 						$query = "
 							SELECT
 								*
@@ -57,22 +55,42 @@
 						
 						if (!$result) {
 							die('Invalid query: ' . mysql_error());
-						} else {
-							$num_rows = $result;
-							echo($num_rows);
 						}
 						
-						
-						$x = 1;
-					//	for($x = 1; $x <= $num_rows; $x++)
-					//	do{
+						$data = $stmt->fetchAll();
+					
+						//for($x = 0; $x <= $row_data.length; $x++) {
+						foreach ($data as $row_data) {
+						//do{
 						?>
 							<li>
-								<?php // $x++; ?>
-								hello there
+							Title:
+							<br>
+							<?php
+							//	$x++;
+							print($row_data["title"]);
+							//	var_dump($num_rows);
+							//	print($x);
+								?>
+								<ul>
+									<li>
+										Message:
+										<br>
+										<?php
+											print($row_data["message"]);
+										?>
+									</li>
+									<li>
+										Name:
+										<br>
+										<?php
+											print($row_data["name"]);
+										?>
+									</li>
+								</ul>
 							</li>
 						<?php
-					//	} while($num_rows >= $x);
+						} //while($num_rows >= $x);
 						?>
 						<li class="buttons">
 							<input name="New message" type="button" value="New Message" onclick="location.href='index.php?page=messaging'"/>

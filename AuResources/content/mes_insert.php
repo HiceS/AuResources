@@ -1,4 +1,6 @@
 <?php
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
 require("common.php");
 if(empty($_SESSION['user']))
 {
@@ -59,21 +61,24 @@ else
             die("This title is already in use");
         }
 		
-	//	$name = ($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
+		$name = $_SESSION['user']['name'];
 		
         $query = "
             INSERT INTO messaging (
                 title,
-				message
+				message,
+				name
             ) VALUES (
                 :title,
-				:message
+				:message,
+				:name
 				
             )
         ";
 			$query_params = array(
 				':title' => $_POST['title'],
-				':message' => $_POST['message']
+				':message' => $_POST['message'],
+				':name' => $name
 			);
 			
 			try
