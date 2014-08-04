@@ -1,5 +1,5 @@
 <?php
-
+	require_once "common.php";
 	$pagename = htmlspecialchars($_GET["page"]);
 
 	if ($pagename == "") {
@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<title>AuResources</title>
+<title>AuSociety</title>
 <meta charset="utf-8">
 <link rel="icon" type="img/png" href="images/favicon.png" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,900" rel="stylesheet">
@@ -42,7 +42,6 @@
 		  <div id="user">
 			<?php
 			
-			require("common.php");
 			
 			if(empty($_SESSION['user'])){
 			?>
