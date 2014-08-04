@@ -1,6 +1,6 @@
 <?php
 				// First we execute our common code to connection to the database and start the session
-				require("common.php");
+				require_once "common.php";
 				
 				// At the top of the page we check to see whether the user is logged in or not
 				if(empty($_SESSION['user']))
@@ -35,9 +35,6 @@
 					<li>
 						<label for="message">Message:</label>
 						<input type="text" name="message"/>
-					</li>
-					<li>
-						<a name="name" for="name"><?php echo htmlentities($_SESSION['user']['name'], ENT_QUOTES, 'UTF-8'); ?></a>
 					</li>
 					<li class="buttons">
 						<input type="submit" href="index.php?page=mes_insert" value="Finished" />

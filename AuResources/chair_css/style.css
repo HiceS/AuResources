@@ -1121,7 +1121,27 @@
 		color: #fff;
 		margin-left: 2em;
 	}
-
+/*********************************************************************************/
+/* Message                                                                       */
+/*********************************************************************************/
+	#message
+	{
+		padding: 20px;
+	}
+	
+		#message .mes_title
+		{
+			margin-top: 1em;
+			font-weight: 300;
+			color: #FFD119;
+		}
+		
+		#message .mes_body
+		{
+			padding: 1em 1em 1em 1em;
+			color: #000;
+		}
+		
 /*********************************************************************************/
 /* Written                                                                       */
 /*********************************************************************************/
@@ -1147,6 +1167,15 @@
 		
 		}
 		
+		#info_written .fancytitle_message
+		{
+			margin-left: 1em;
+			font-size: 120%;
+			color: #000;
+			font-weight: 200;
+			
+		}
+		
 		#info_written .fancybody
 		{
 			margin-right: 5em;
@@ -1155,12 +1184,36 @@
 			background: #fff;
 		}
 		
+		#info_written .fancybody_message
+		{
+			margin-right: 5em;
+			margin-left: 2em;
+			background: #fff;
+			border: 1px solid black;
+			margin-bottom: .5em;
+			color: #000;
+		}
+		
+		
 		#info_written .fancybody_right
 		{
 			margin-right: 5em;
 			margin-left: 20em;
 			margin-bottom: 3em;
 			background: #fff;
+		}
+		
+		#info_written .nameheading
+		{
+			margin-right: 2em;
+			margin-bottom: 2em;
+			float: right;
+			color: #000;
+		}
+		
+		#info_written .fancyname 
+		{
+			color: #000;
 		}
 		
 		#info_written .endline 

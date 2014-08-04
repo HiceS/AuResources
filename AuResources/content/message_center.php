@@ -3,7 +3,7 @@
 			//	ini_set('error_reporting', E_ALL);
 			//	ini_set('display_errors', 1);
 				
-				require("common.php");
+				require_once "common.php";
 				
 				// At the top of the page we check to see whether the user is logged in or not
 				if(empty($_SESSION['user']))
@@ -28,11 +28,14 @@
 		<div class="padded_info">
 		<h1><span class = "hugetitle" style="text-align: center;"><font color="#FFD119">Au</font>Messaging: </span></h1>
 				<div id="info_written">
-			<a>Hello:
+				<div>
+			<a class= "nameheading">Hello:
 				<br>
 					<?php echo htmlentities($_SESSION['user']['name'], ENT_QUOTES, 'UTF-8'); ?>
 				<br>
 			</a>
+			</div>
+			<div>
 					<ul>
 						<?php
 						
@@ -66,27 +69,35 @@
 							<li>
 							Title:
 							<br>
+							<span class="fancytitle_message">
 							<?php
 							//	$x++;
 							print($row_data["title"]);
 							//	var_dump($num_rows);
 							//	print($x);
 								?>
+								</span>
 								<ul>
 									<li>
-										Message:
+									<a class= "fancyparagraph" style="color = #000">
+										<span><font color="black">Message:</font></span>
 										<br>
+										<p class = "fancybody_message">
 										<?php
 											print($row_data["message"]);
 										?>
+										</p>
 									</li>
 									<li>
+										<a class="fancyname">
 										Name:
 										<br>
 										<?php
 											print($row_data["name"]);
 										?>
+										</a>
 									</li>
+									</a>
 								</ul>
 							</li>
 						<?php
@@ -94,7 +105,9 @@
 						?>
 						<li class="buttons">
 							<input name="New message" type="button" value="New Message" onclick="location.href='index.php?page=messaging'"/>
+						</li>
 					</ul>
+					</div>
 			</div>
 		</div>
 		</form>

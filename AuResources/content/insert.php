@@ -1,5 +1,5 @@
 <?php
-require("common.php");
+require_once "common.php";
     if(!empty($_POST))
     {
         // Ensure that the user has entered a non-empty username

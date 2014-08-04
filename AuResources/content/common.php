@@ -1,9 +1,9 @@
- <?php
+<?php
 
     // These variables define the connection information for your MySQL database
     $username = "root";
     $password = "cam99els";
-    $host = "localhost";
+    $host = "shawn.thegriffen.com";
     $dbname = "au_resources";
 
     // UTF-8 is a character encoding scheme that allows you to conveniently store
@@ -75,7 +75,7 @@
     
     // This tells the web browser that your content is encoded using UTF-8
     // and that it should submit content back to you using UTF-8
-    header('Content-Type: text/html; charset=utf-8');
+    header('Content-Type: text/html; charset=utf-8');	
     
     // This initializes a session.  Sessions are used to store information about
     // a visitor from one web page visit to the next.  Unlike a cookie, the information is
